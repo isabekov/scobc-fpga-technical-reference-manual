@@ -19,5 +19,8 @@ ${MANUAL}.docx: *.org template/sc_pandoc_trm_reference.docx images/*.png
 	revision_history.org \
 	-o $@
 
+publish:
+	emacs -l scripts/publish-to-rtd.el -f org-publish-all --kill --batch
+
 clean:
 	${RM} *.docx *.pdf
